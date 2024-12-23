@@ -10,7 +10,9 @@ on:
     azure-aks-rg:
         required: true
         type: string
-
+    helm-repo-path:
+        required: true
+        type: string
 
 env:
   REGISTRY: ghcr.io
@@ -28,6 +30,7 @@ jobs:
     with:
       azure-aks: ${{inputs.azure-aks}}
       azure-aks-rg: ${{inputs.azure-aks-rg}}
+      helm-repo-path: ${{inputs.helm-repo-path}}
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_GITHUB_APP }}
       AZURE_SUB_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
