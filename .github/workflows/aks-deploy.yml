@@ -26,8 +26,8 @@ jobs:
   deploy:
     uses: CSCorpIt/reusable-workflows/.github/workflows/aks_deploy.yml@main
     with:
-      azure-aks: ${{input.azure-aks}}
-      azure-aks-rg: ${{input.azure-aks-rg}}
+      azure-aks: ${{inputs.azure-aks}}
+      azure-aks-rg: ${{inputs.azure-aks-rg}}
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_GITHUB_APP }}
       AZURE_SUB_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
